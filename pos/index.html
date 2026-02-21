@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atom POS - Customer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <button class="nav-btn" onclick="goHome()">Home</button>
+    <button class="nav-btn active" onclick="showSection('products',this)">Products</button>
+    <button class="nav-btn" onclick="showSection('cart',this)">
+        Cart (<span id="cartBadge">0</span>)
+    </button>
+</header>
+
+<div class="container">
+
+<section id="productsSection">
+<h2>Products</h2>
+<input type="text" id="searchInput" placeholder="Search products...">
+<div id="productsGrid"></div>
+</section>
+
+<section id="cartSection" style="display:none;">
+<h2>Your Cart</h2>
+<div id="cartItems"></div>
+<h3>Total: ₱<span id="total">0</span></h3>
+<button onclick="confirmOrder()">Checkout</button>
+</section>
+
+</div>
+
+<!-- PRODUCT VIEW MODAL -->
+<div class="modal" id="viewModal">
+<div class="modal-content large">
+<div id="viewContent"></div>
+<button onclick="closeViewModal()">Close</button>
+</div>
+</div>
+
+<!-- RECEIPT MODAL -->
+<div class="modal" id="receiptModal">
+<div class="modal-content large">
+<h2>Receipt</h2>
+<div id="receiptContent"></div>
+<button onclick="closeReceipt()">Close</button>
+</div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
